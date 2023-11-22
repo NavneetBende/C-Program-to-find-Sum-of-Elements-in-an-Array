@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+// recursion starts from a[0] goes to a[len-1]
+int calcSum(int arr[], int index, int len)
+{
+    if(index == len-1)
+        return arr[index];
+        
+    return arr[index] + calcSum(arr, index+1, len);
+}
+
+int main()
+{
+    int arr[] = {1, 5, 2, 10, 4, 8};
+    
+    // get the length of the array
+    int len = sizeof(arr)/sizeof(arr[0]);    
+    
+    printf("Sum: %d",calcSum(arr, 0, len));
+}
+// Time Complexity : O(N)
+// Space Complexity : O(N)
+// Auxiliary Space Complexity : (N) due to function call stack
